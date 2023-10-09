@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* main - a program to write alpahbits in lowercase using putchar
+* main - a program to write alpahbits in lowercase (reversied) using putchar
 *Return: 0 (Success)
 */
 int main(void)
