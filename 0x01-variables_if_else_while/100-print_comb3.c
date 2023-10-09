@@ -18,8 +18,9 @@ putchar(first);
 putchar(second);
 if (first != '8' && second != '9')
 {
-putcahr(',');
+putchar(',');
 putchar(' ');
+}
 }
 }
 }
