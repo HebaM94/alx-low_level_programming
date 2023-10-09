@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
 * main - a program that prints all possible different combinations
-* of two digits
+* of three digits
 * Return: 0 (Success)
 */
 int main(void)
@@ -15,7 +15,9 @@ for (second = '0'; second < '9'; second++)
 {
 for (third = '0'; third <= '9'; third++)
 {
-if (third > second > first)
+if (third > second)
+{
+if (second > first)
 {
 putchar(first);
 putchar(second);
@@ -24,6 +26,7 @@ if (first != '7')
 {
 putchar(',');
 putchar(' ');
+}
 }
 }
 }
