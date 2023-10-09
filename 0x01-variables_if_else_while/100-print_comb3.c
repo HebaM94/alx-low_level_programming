@@ -12,11 +12,11 @@ for (; first <= '9'; first++)
 {
 for (; second <= '9'; second++)
 {
-  if(! ((first == second) || (second > first)))
+if(!((first == second) || (second > first)))
 {
 putchar(first);
 putchar(second);
-if (!(first == '8' && second == '9')
+if (!(first == '8' && second == '9'))
 {
 putchar(',');
 putchar(' ');
