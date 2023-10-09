@@ -8,15 +8,15 @@ int main(void)
 {
 int first = '0';
 int second = '0';
-for (; first <= '9'; first++)
+for (; first < '9'; first++)
 {
 for (; second <= '9'; second++)
 {
-  if (!((second == first) || (first > second)))
+if (second > first)
 {
 putchar(first);
 putchar(second);
-if (!(second == '9' && first == '8'))
+if (first != '8')
 {
 putchar(',');
 putchar(' ');
