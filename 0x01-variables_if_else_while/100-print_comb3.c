@@ -6,11 +6,11 @@
 */
 int main(void)
 {
-int first = '0';
-int second = '0';
-for (; first < '9'; first++)
+int first;
+int second;
+for (first = '0'; first < '9'; first++)
 {
-for (; second <= '9'; second++)
+for (second = '0'; second <= '9'; second++)
 {
 if (second > first)
 {
