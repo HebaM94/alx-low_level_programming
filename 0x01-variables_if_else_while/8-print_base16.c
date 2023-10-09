@@ -15,7 +15,7 @@ h++;
 while (hdic <= 'f')
 {
 putchar(hdic);
-hdic++
+hdic++;
 }
 putchar('\n');
 return (0);
