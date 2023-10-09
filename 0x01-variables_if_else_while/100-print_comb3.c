@@ -8,9 +8,9 @@ int main(void)
 {
 int first = '0';
 int second = '0';
-for (; first <= 9; first++)
+for (; first <= '9'; first++)
 {
-for (; second <= 9; second++)
+for (; second <= '9'; second++)
 {
 if ((first != second) && (second > first))
 {
