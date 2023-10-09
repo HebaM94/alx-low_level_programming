@@ -9,7 +9,7 @@ int h = 0;
 char hdic = 'a';
 while (h < 10)
 {
-putchar(i + '0');
+putchar(h + '0');
 h++;
 }
 while (hdic <= 'f')
