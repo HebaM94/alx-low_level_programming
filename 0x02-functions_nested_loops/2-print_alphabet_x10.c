@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* print_alphabet - a function to write alphabets in lowercase
+* print_alphabet_x10 - a function to write alphabets in lowercase
 * 10 times in new lines using _putchar twice
 * Return: void
 */
