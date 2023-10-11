@@ -14,9 +14,9 @@ t = n % 3;
 f = n % 5;
 if (t == 0 || f == 0)
 {
-sum = sum + n;
+sum += n;
 }
 }
-printf("%d\n", sum);
+printf("%ld\n", sum);
 return (0);
 }
