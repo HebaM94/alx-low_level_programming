@@ -21,7 +21,7 @@ printf(", %lu", next);
 }
 else
 {
-printf("lu\n", next);
+printf("%lu\n", next);
 }
 first = second;
 second = next;
