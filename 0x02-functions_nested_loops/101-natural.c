@@ -8,7 +8,7 @@ int main(void)
 {
 int n, t, f, sum;
 sum = 0;
-for (n = 0; n > 1024; n++)
+for (n = 0; n < 1024; n++)
 {
 t = n % 3;
 f = n % 5;
