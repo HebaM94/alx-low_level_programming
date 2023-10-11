@@ -7,10 +7,10 @@
 int main(void)
 {
 int f, n;
-n = 50;
+unsigned long next;
 unsigned long one = 1;
 unsigned long two = 2;
-unsigned long next;
+n = 50;
 printf("%lu, %lu", one, two);
 for (f = 2; f < n; f++)
 {
