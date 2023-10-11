@@ -17,6 +17,6 @@ if (t == 0 || f == 0)
 sum += n;
 }
 }
-printf("%ld\n", sum);
+printf("%d\n", sum);
 return (0);
 }
