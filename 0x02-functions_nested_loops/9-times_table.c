@@ -25,8 +25,8 @@ if (i != 0)
 _putchar(',');
 _putchar(' ');
 _putchar(' ');
-_putchar (t + '0');
 }
+_putchar (t + '0');
 }
 }
 _putchar('\n');
