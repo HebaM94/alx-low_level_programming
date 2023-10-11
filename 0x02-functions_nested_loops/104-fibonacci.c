@@ -6,14 +6,14 @@
 */
 int main(void)
 {
-unsigned long a, a1, a2, b, b1, b2, c;
-int f, n;
+unsigned long a, a1, a2, b, b1, b2, c, h1, h2;
+int f;
 a = 1;
 b = 2;
 printf("%lu, %lu", a, b);
 for (f = 3; f < 92; f++)
 {
-next = a + b;
+c = a + b;
 printf(", %lu", c);
 a = b;
 b = c;
