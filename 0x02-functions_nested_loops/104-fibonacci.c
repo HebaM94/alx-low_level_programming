@@ -6,17 +6,18 @@
 */
 int main(void)
 {
-int first, second, next, count;
+unsigned long first, second, next;
+int count;
 first = 1;
 second = 2;
 count = 2;
-printf("%d, %d", first, second);
+printf("%lu, %lu", first, second);
 while (count < 98)
 {
 next = first + second;
 first = second;
 second = next;
-printf(", %d", next);
+printf(", %lu", next);
 count++;
 }
 printf("\n");
