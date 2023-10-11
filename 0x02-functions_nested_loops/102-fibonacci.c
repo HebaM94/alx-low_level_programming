@@ -8,9 +8,9 @@ int main(void)
 {
 int f, n;
 n = 50;
-unsigned long first = 1;
-unsigned long second = 2;
-unsigned long next;
+unsigned long int first = 1;
+unsigned long int second = 2;
+unsigned long int next;
 printf("%lu, %lu", first, second);
 for (f = 2; f < n; f++)
 {
