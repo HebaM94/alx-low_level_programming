@@ -8,16 +8,16 @@ int main(void)
 {
 int f, n;
 n = 50;
-unsigned long int first = 1;
-unsigned long int second = 2;
-unsigned long int next;
-printf("%lu, %lu", first, second);
+unsigned long one = 1;
+unsigned long two = 2;
+unsigned long next;
+printf("%lu, %lu", one, two);
 for (f = 2; f < n; f++)
 {
-next = first + second;
+next = one + two;
 printf(", %lu", next);
-first = second;
-second = next;
+one = two;
+two = next;
 }
 printf("\n");
 return (0);
