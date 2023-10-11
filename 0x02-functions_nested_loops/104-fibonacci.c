@@ -10,15 +10,13 @@ unsigned long first, second, next;
 int count;
 first = 1;
 second = 2;
-count = 2;
 printf("%lu, %lu", first, second);
-while (count < 98)
+for (count = 2; count <  98; count++)
 {
 next = first + second;
+printf(", %lu", next);
 first = second;
 second = next;
-printf(", %lu", next);
-count++;
 }
 printf("\n");
 return (0);
