@@ -1,0 +1,24 @@
+#include <stdio.h>
+/**
+* main - a program that prints the first 50 Fibonacci numbers
+* starting with 1 and 2, followed by a new line
+* Return: 0 (Success)
+*/
+int main(void)
+{
+int f, n;
+n = 50;
+unsigned long first = 1;
+unsigned long second = 2;
+unsigned long next;
+printf("%lu, %lu", first, second);
+for (f = 2; f < n; f++)
+{
+next = first + second;
+printf(", %lu", next);
+first = second;
+second = next;
+}
+printf("\n");
+return (0);
+}
