@@ -7,17 +7,24 @@
 int main(void)
 {
 unsigned long first, second, next;
-int count;
+int count, n;
+n = 98;
 first = 1;
 second = 2;
 printf("%lu, %lu", first, second);
-for (count = 2; count <  98; count++)
+for (count = 3; count < n; count++)
 {
 next = first + second;
+if (count < n)
+{
 printf(", %lu", next);
+}
+else
+{
+printf("lu\n", next);
+}
 first = second;
 second = next;
 }
-printf("\n");
 return (0);
 }
