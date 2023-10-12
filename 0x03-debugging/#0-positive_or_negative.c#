@@ -1,0 +1,7 @@
+#include "main.h"
+/**
+* positive_or_negative - a function to prints 9 times table starting with 0
+* Return: void
+*/
+void positive_or_negative(int i)
+{
