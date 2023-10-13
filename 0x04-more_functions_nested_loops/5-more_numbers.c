@@ -12,15 +12,11 @@ for (i = 0; i < 10; i++)
 n = 0;
 while (n < 15)
 {
-if (n < 10)
-{
-_putchar(n + '0');
-}
-else
+if (n >= 10)
 {
 _putchar((n / 10) + '0');
-_putchar((n % 10) + '0');
 }
+_putchar((n % 10) + '0');
 n++;
 }
 _putchar('\n');
