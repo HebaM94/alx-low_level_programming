@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* swap_int - function that returns the length of a string.
+* _strlen - function that returns the length of a string.
 * @s: The string to be checked
 * Return: length
 */
