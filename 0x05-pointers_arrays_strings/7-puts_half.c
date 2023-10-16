@@ -18,7 +18,7 @@ n = length / 2;
 }
 else if (length % 2 != 0)
 {
-n = (length - 1) / 2;
+n = (length + 1) / 2;
 }
 i = n;
 while (str[i] != '\0')
