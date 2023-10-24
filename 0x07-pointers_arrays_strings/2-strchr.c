@@ -3,7 +3,7 @@
 * *_strchr - function that locates a character in a string
 * @s: string to be checked
 * @c: character we are looking for
-* Return: &s[i] or NULL (not found)
+* Return: &s[i] or 0 (NULL - not found)
 */
 char *_strchr(char *s, char c)
 {
@@ -18,6 +18,6 @@ return (&s[i]);
 }
 }
 }
-return (0);
+return ('\0');
 }
 
