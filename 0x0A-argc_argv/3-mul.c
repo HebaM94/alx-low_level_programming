@@ -5,7 +5,7 @@
 * main - program that multiplies two numbers.
 * @argc: number of arguments
 * @argv: array of arguments
-* Return:  0 (Success)
+* Return:  0 (Success) or 1 (Error)
 */
 int main(int argc, char *argv[])
 {
