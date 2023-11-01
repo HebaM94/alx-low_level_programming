@@ -15,7 +15,7 @@ if (width <= 0 || height <= 0)
 {
 return (NULL);
 }
-ar = malloc(sizeof(int) * height);
+ar = malloc(sizeof(int *) * height);
 if (ar == NULL)
 {
 return (NULL);
