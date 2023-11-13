@@ -19,8 +19,7 @@ char *sp;
 int (*f)(int a, int b);
 } sp_f;
 
-int print_int(const char *format, ...);
-
+int print_int(va_list integers);
 int _printf(const char *format, ...);
 
 

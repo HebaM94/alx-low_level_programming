@@ -6,43 +6,34 @@
  * @...: A variable number of integers to be printed
  * Return: integer
 */
-int print_int(const char *format, ...)
+int print_int(va_list integers)
 {
-va_list integers;
-int num, counter, decimal, digit;
+int num = va_arg(integers, int);
+int counter, decimal, digit, numcp;
 char sign = '\0';
 char integer;
 decimal = 1;
 counter = 0;
-va_start(integers, format);
-while (*format)
-{
-if (*format == '%' && (format[1] == 'd' || format[1] == 'i'))
-{
-num = va_arg(integers, int);
+numcp = num;
 if (num < 0)
 {
 sign = '-';
-num = - num;
+numcp = - num;
 counter++;
 write (1, &sign, 1);
 }
-while ((num / decimal) >= 10)
+while ((numcp / decimal) >= 10)
 {
 decimal = decimal * 10;
 }
 while (decimal > 0)
 {
-digit = num / decimal;
-num = num % decimal;
+digit = numcp / decimal;
+numcp = numcp % decimal;
 decimal = decimal / 10;
 integer = digit + '0';
 write (1, &integer, 1);
 counter++;
 }
-}
-format++;
-}
-va_end(integers);
 return (counter);
 }
