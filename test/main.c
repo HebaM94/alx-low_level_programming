@@ -1,17 +1,16 @@
-#include <limits.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
+int main(void) {
+    int count;
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-    int len = 9;
-    int len2 = -9;
+    count = print_int("Printing a single integer: %d\n", 42);
+    printf("Characters printed: %d\n", count);
 
-    print_int("%d %i", len, len2);
-    printf("Length:[%d, %i]\n", len2, len2);
+    count = print_int("Negative integer: %d\n", -123);
+    printf("Characters printed: %d\n", count);
+
+    count = print_int("Another number: %i\n", 9876);
+    printf("Characters printed: %d\n", count);
+
+    return 0;
 }
