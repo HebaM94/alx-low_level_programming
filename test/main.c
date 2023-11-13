@@ -11,8 +11,7 @@ int main(void)
 {
     int len = 9;
     int len2 = -9;
-    unsigned int ui;
-    void *addr;
+
     print_int("%d %i", len, len2);
     printf("Length:[%d, %i]\n", len2, len2);
 }

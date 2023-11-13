@@ -16,7 +16,7 @@
 typedef struct sp
 {
 char *sp;
-int (*f)(const char *format, ...);
+int (*f)(int a, int b);
 } sp_f;
 
 int print_int(const char *format, ...);
