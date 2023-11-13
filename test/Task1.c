@@ -8,12 +8,12 @@
 */
 int print_int(const char *format, ...)
 {
+    va_list integers;
     int num, counter, decimal, digit;
     char sign = '\0';
     char integer;
     decimal = 1;
     counter = 0;
-va_list integers;
 va_start(integers, format);
 while (*format)
 {
