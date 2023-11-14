@@ -16,7 +16,7 @@
 typedef struct sp
 {
 char *sp;
-int (*f)(int a, int b);
+int (*f) ();
 } sp_f;
 
 int print_int(va_list integers);
