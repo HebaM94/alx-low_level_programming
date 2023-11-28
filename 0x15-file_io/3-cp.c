@@ -36,7 +36,7 @@ exit(99);
 * main - program copies the content of a file to another file
 *@argc: arguments count.
 *@argv: arguments vector.
-* Return: 1 (Success), or exit otherwise
+* Return: 0 (Success), or exit otherwise
 */
 int main(int argc, char *argv[])
 {
@@ -52,7 +52,7 @@ src = open(argv[1], O_RDONLY);
 checker(src, -1, argv[1], 'O');
 dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, m);
 checker(dest, -1, argv[2], 'W');
-while (numread == 1024)
+while (numread > 0)
 {
 numread = read(src, buffer, sizeof(buffer));
 if (numread == -1)
@@ -65,6 +65,6 @@ closesrc = close(src);
 checker(closesrc, src, NULL, 'C');
 closedest = close(dest);
 checker(closedest, dest, NULL, 'C');
-return (1);
+return (0);
 }
 
