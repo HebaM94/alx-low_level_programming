@@ -26,7 +26,7 @@ else if (mode == 'W' && state == -1)
 dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", filename);
 exit(99);
 }
-else if (mode == 'C' && state == -1)
+else if (mode == 'O' && state == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 exit(98);
