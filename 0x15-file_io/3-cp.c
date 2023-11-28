@@ -10,8 +10,8 @@ void checker(int state, int fd, char *filename, char mode);
 * checker - function the checks if a file can be opened or closed
 *@state: state of the file to be opened
 *@fd: file descriptor
-@filename: file to be opened
-@mode: mode of the file
+*@filename: file to be opened
+*@mode: mode of the file
 * Return: void
 */
 void checker(int state, int fd, char *filename, char mode)
@@ -21,15 +21,15 @@ if (mode == 'C' && state == -1)
 dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 exit(100);
 }
-else if (mode == 'W' && state == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", filename);
-exit(99);
-}
 else if (mode == 'O' && state == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 exit(98);
+}
+else if (mode == 'W' && state == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+exit(99);
 }
 }
 /**
@@ -41,11 +41,11 @@ exit(98);
 int main(int argc, char *argv[])
 {
 int src, dest, wr, closesrc, closedest, numread = 1024;
-unsigned int m = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
+unsigned int m = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 char buffer[1024];
 if (argc != 3)
 {
-dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+dprintf(STDERR_FILENO, "%s", "Usage: copy file_from file_to\n");
 exit(97);
 }
 src = open(argv[1], O_RDONLY);
