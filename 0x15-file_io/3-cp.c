@@ -41,7 +41,6 @@ exit(99);
 int main(int argc, char *argv[])
 {
 int src, dest, wr, closesrc, closedest, numread = 1024;
-unsigned int m = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 char buffer[1024];
 if (argc != 3)
 {
@@ -50,7 +49,7 @@ exit(97);
 }
 src = open(argv[1], O_RDONLY);
 checker(src, -1, argv[1], 'O');
-dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, m);
+dest = open(argv[2], O_WRONLY | O-CREAT | O_TRUNC, 0664);
 checker(dest, -1, argv[2], 'W');
 while (numread > 0)
 {
