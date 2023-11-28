@@ -49,7 +49,7 @@ exit(97);
 }
 src = open(argv[1], O_RDONLY);
 checker(src, -1, argv[1], 'O');
-dest = open(argv[2], O_WRONLY | O-CREAT | O_TRUNC, 0664);
+dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 checker(dest, -1, argv[2], 'W');
 while (numread > 0)
 {
