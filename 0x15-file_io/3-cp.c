@@ -65,6 +65,6 @@ closesrc = close(src);
 checker(closesrc, src, NULL, 'C');
 closedest = close(dest);
 checker(closedest, dest, NULL, 'C');
-return (0);
+return (1);
 }
 
