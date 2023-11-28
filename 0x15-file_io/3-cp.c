@@ -9,7 +9,7 @@ void checker(int state, int fd, char *filename, char mode);
 /**
 * checker - function the checks if a file can be opened or closed
 *@state: state of the file to be opened
-*@fd: file descriptor
+*@fd: value of the file descriptor
 *@filename: file to be opened
 *@mode: mode of the file
 * Return: void
@@ -41,15 +41,16 @@ exit(99);
 int main(int argc, char *argv[])
 {
 int src, dest, wr, closesrc, closedest, numread = 1024;
+ssize_t perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 char buffer[1024];
 if (argc != 3)
 {
-dprintf(STDERR_FILENO, "%s", "Usage: copy file_from file_to\n");
+dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
 exit(97);
 }
 src = open(argv[1], O_RDONLY);
 checker(src, -1, argv[1], 'O');
-dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+dest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
 checker(dest, -1, argv[2], 'W');
 while (numread > 0)
 {
