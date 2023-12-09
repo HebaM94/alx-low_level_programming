@@ -8,7 +8,7 @@
 int main(int ac __attribute__((unused)), char *av[])
 {
 int i;
-for (i = 0; av; i++)
+for (i = 0; av != '\0'; i++)
 {
 printf("%s\n", av[i]);
 }
