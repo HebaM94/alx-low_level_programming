@@ -7,8 +7,10 @@
 */
 int main(int ac __attribute__((unused)), char **av[])
 {
-int i;
-for (i = 0; av[i]; i++)
+int i, j = 0;
+while (av)
+j++;
+for (i = 0; i<j; i++)
 {
 printf("%s\n", av[i]);
 }
