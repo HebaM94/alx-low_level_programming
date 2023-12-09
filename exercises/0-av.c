@@ -5,10 +5,10 @@
 * @argv: array of arguments
 * Return:  0 (Success)
 */
-int main(int ac __attribute__((unused)), char *av[])
+int main(int ac __attribute__((unused)), char **av[])
 {
 int i;
-for (i = 0; av[i]; i++)
+for (i = 0; *av[i]; i++)
 {
 printf("%s\n", av[i]);
 }
