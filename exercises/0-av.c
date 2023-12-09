@@ -1,16 +1,18 @@
 #include <stdio.h>
 /**
 * main - prints all arguments it receives.
-* @argc: number of arguments
-* @argv: array of arguments
+* @ac: number of arguments
+* @av: array of arguments
 * Return:  0 (Success)
 */
-int main(int ac __attribute__((unused)), char *av[])
+int main(int ac __attribute__((unused)), char **av[])
 {
-int i;
-for (i = 0; av[i] != '\0'; i++)
-{
-printf("%s\n", av[i]);
-}
+    char **arg = av; // Pointer to the start of the arguments
+
+    // Iterate through arguments until NULL is encountered
+    while (*arg != NULL) {
+        printf("%s\n", *arg);
+        arg++; // Move to the next argument
+    }
 return (0);
 }
