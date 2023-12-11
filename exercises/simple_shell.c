@@ -13,8 +13,7 @@
 
 int main(void)
 {
-char *cmd = NULL;
-size_t n = 0;
+char *cmd;
 
     while (1) {
         cmd = interpreter();

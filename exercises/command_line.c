@@ -33,7 +33,7 @@ while (1)
         break;
     }
     remove_newline(cmd);
-    if ((_strcmp(cmd, "exit")) == 0) 
+    if (_strcmp(cmd, "exit") == 0) 
     {
         exit(1);
     }
