@@ -20,7 +20,7 @@ size_t n = 0;
         cmd = interpreter();
 
         if (cmd != NULL) {
-            execute_command(cmd);
+            execution(cmd);
         }
     }
 

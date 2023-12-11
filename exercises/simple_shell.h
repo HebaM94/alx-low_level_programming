@@ -17,6 +17,3 @@ void execution(char *cmd);
 
 
 #endif
-
-//void remove_line(char *command, char **lineremoved);
-//char *input(char *cmd, size_t n, ssize_t user_input);

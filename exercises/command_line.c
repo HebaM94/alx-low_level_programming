@@ -19,7 +19,7 @@ ssize_t input;
 while (1)
 {
     if (isatty(STDIN_FILENO)) 
-       write(STDOUT_FILENO, '$ ',2);
+       write(STDOUT_FILENO, "$ ",3);
     input = getline(&cmd, &n, stdin);
     if (input == -1)
     {
@@ -33,7 +33,7 @@ while (1)
         break;
     }
     remove_newline(cmd);
-    if (_strcmp(cmd, "exit") == 0) 
+    if ((_strcmp(cmd, "exit")) == 0) 
     {
         exit(1);
     }
