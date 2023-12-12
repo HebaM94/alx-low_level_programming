@@ -23,7 +23,7 @@ ssize_t input;
     if (input == -1)
     {
         write(STDOUT_FILENO, "\n", 1);
-        return (EXIT_FAILURE);
+        exit(1);
     }
     remove_newline(cmd);
     if (_strcmp(cmd, "exit") == 0) 
