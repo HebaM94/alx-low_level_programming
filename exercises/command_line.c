@@ -24,12 +24,6 @@ while (1)
     if (input == -1)
     {
         write(STDOUT_FILENO, "\n", 1);
-        if (cmd != NULL)
-        {
-            free(cmd);
-            cmd = NULL;
-        }
-        close(STDOUT_FILENO);
         break;
     }
     remove_newline(cmd);
