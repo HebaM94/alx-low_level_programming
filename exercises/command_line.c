@@ -50,9 +50,12 @@ return(cmd);
 
 void execution(char *cmd)
 {
+    pid_t pid;
+    char *args = NULL;
+    int len;
 if (access(cmd, X_OK) == 0) {
         
-        pid_t pid = fork();
+        pid = fork();
 
         if (pid == -1) {
             perror("fork");
@@ -60,8 +63,11 @@ if (access(cmd, X_OK) == 0) {
         }
 
         if (pid == 0) {
-            
-            char *args[] = {cmd, NULL};
+            len = _strlen(cmd);
+            args = malloc(sizeof(char) * len);
+            args[0] = *cmd;
+            args[1] = NULL;
+
             execve(cmd, args, NULL);
             
             perror("execve");
