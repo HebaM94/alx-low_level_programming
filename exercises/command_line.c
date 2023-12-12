@@ -47,36 +47,30 @@ void execution(char *cmd)
     pid_t pid;
     char **args = NULL;
 if (access(cmd, X_OK) == 0) {
-        
-        pid = fork();
-
-        if (pid == -1) {
+         pid = fork();
+         if (pid == -1) 
+         {
             perror("fork");
             exit(EXIT_FAILURE);
         }
-
-        if (pid == 0) {
+        if (pid == 0) 
+        {
             args = malloc(2 * sizeof(char));
             if (args == NULL) {
                 perror("malloc");
                 exit(EXIT_FAILURE);
             }
-
             args[0] = cmd;
             args[1] = NULL;
-
-
-            execve(cmd, args, NULL);
-            
+            execve(cmd, args, NULL);           
             perror("execve");
             free(args);
             exit(EXIT_FAILURE);
-        } else {
-            
+        } else {            
             wait(NULL); 
         }
     } else {
-        write(STDOUT_FILENO, "./shell: command not found\n", 27);
+        write(STDOUT_FILENO, "./shell: Command not found\n", 27);
     }
 }
 
