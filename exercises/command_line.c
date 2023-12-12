@@ -38,7 +38,7 @@ while (1)
         exit(1);
     }
 }
-free (cmd);
+
 return(cmd);
 }
 
