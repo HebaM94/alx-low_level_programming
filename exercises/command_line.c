@@ -52,7 +52,6 @@ void execution(char *cmd)
 {
     pid_t pid;
     char **args = NULL;
-    int len;
 if (access(cmd, X_OK) == 0) {
         
         pid = fork();
