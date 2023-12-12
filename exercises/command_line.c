@@ -16,22 +16,21 @@ char *interpreter()
 char *cmd = NULL;
 size_t n = 0;
 ssize_t input;
-while (1)
-{
+
     if (isatty(STDIN_FILENO)) 
        write(STDOUT_FILENO, "$ ",3);
     input = getline(&cmd, &n, stdin);
     if (input == -1)
     {
         write(STDOUT_FILENO, "\n", 1);
-        break;
+        return (EXIT_FAILURE);
     }
     remove_newline(cmd);
     if (_strcmp(cmd, "exit") == 0) 
     {
         exit(1);
     }
-}
+
 
 return(cmd);
 }
