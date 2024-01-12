@@ -26,7 +26,7 @@ temp->next = new_node;
 }
 else
 *head = new_node;
-temp->prev = temp;
+new_node->prev = temp;
 return (new_node);
 }
 
