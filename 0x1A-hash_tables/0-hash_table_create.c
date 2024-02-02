@@ -21,3 +21,4 @@ for (i = 0; i < size; i++)
 hasht->array[i] = NULL;
 return (hasht);
 }
+
