@@ -12,11 +12,17 @@ hash_table_t *h;
 unsigned long int i;
 h = malloc(sizeof(hash_table_t));
 if (h == NULL)
+{
+free(h);
 return (NULL);
+}
 h->size = size;
 h->array = malloc(sizeof(hash_node_t *) * size);
 if (h->array == NULL)
+{
+free(h);
 return (NULL);
+}
 for (i = 0; i < size; i++)
 h->array[i] = NULL;
 return (h);
