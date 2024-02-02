@@ -13,10 +13,7 @@ return (NULL);
 hasht->size = size;
 hasht->array = malloc(sizeof(hash_node_t *) * size);
 if (hasht->array == NULL)
-{
-free(hasht);
 return (NULL);
-}
 for (i = 0; i < size; i++)
 hasht->array[i] = NULL;
 return (hasht);
