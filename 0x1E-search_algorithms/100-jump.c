@@ -25,7 +25,7 @@ if (array[jump] == value)
 return (jump);
 k++;
 prev = jump;
-jump = (k * sqroot);
+jump = k *sqroot;
 } while (jump < (int)size && array[jump] < value);
 printf("Value found between indexes [%d] and [%d]\n", prev, jump);
 for (; prev <= jump && prev < (int)size; prev++)
