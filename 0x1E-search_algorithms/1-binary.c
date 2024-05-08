@@ -20,7 +20,7 @@ right = size - 1;
 while (left <= right)
 {
 printf("Searching in array: ");
-for ( i = left; i <= right; i++)
+for (i = left; i <= right; i++)
 {
 printf("%d", array[i]);
 if (i < right)
