@@ -22,10 +22,11 @@ return (0);
 bound = 0;
 while (bound < size && array[bound] < value)
 {
-printf("Value checked array[%d] = [%d]\n", bound, array[bound]);
+printf("Value checked array[%ld] = [%ld]\n", bound, array[bound]);
 bound *= 2;
 }
-printf("Value found between indexes [%d] and [%d]\n", bound / 2, (bound < size ? bound : size - 1));
+printf("Value found between indexes [%ld] and [%ld]\n", bound / 2,
+(bound < size ? bound : size - 1));
 return (bin_search(array, bound / 2, (bound < size ? bound : size), value));
 }
 /**
