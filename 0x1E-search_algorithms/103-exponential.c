@@ -14,7 +14,7 @@ int bin_search(int *array, int low, int high, int value);
  */
 int exponential_search(int *array, size_t size, int value)
 {
-int bound;
+size_t bound;
 if (array == NULL)
 return (-1);
 if (array[0] == value)
@@ -26,7 +26,7 @@ printf("Value checked array[%d] = [%d]\n", bound, array[bound]);
 bound *= 2;
 }
 printf("Value found between indexes [%d] and [%d]\n", bound / 2, (bound < size ? bound : size - 1));
-return (biny_search(array, bound / 2, (bound < size ? bound : size), value));
+return (bin_search(array, bound / 2, (bound < size ? bound : size), value));
 }
 /**
  * bin_search - Searches for a value in a sorted array
