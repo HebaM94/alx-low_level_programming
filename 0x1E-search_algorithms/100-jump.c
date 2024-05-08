@@ -25,7 +25,7 @@ prev = jump;
 jump += sqroot;
 }
 printf("Value found between indexes [%lu] and [%lu]\n", prev, jump);
-for (i = prev; i <= jump && i < size; i++)
+for (i = prev; i <= ((jump < size - 1) ? jump : size - 1); i++)
 {
 printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 if (array[i] == value)
