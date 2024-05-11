@@ -15,7 +15,7 @@ int advanced_binary_recursive(int *array, size_t size, int value);
 int advanced_binary(int *array, size_t size, int value)
 {
 int i;
-i = rec_search(array, size, value);
+i = advanced_binary_recursive(array, size, value);
 if (i >= 0 && array[i] != value)
 return (-1);
 return (i);
@@ -49,7 +49,7 @@ return (rec_search(array, half + 1, value));
 return ((int)half);
 }
 if (value < array[half])
-return (rec_search(array, half + 1, value));
+return (advanced_binary_recursive(array, half + 1, value));
 half++;
-return (rec_search(array + half, size - half, value) + half);
+return (advanced_binary_recursive(array + half, size - half, value) + half);
 }
