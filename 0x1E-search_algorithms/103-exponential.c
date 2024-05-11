@@ -34,12 +34,12 @@ return (bin_search(array, low, high, value));
  * bin_search - Searches for a value in a sorted array
  * of integers using binary search
  * @array: A pointer to the first element of the array to search.
- * @left: The starting index of the [sub]array to search
- * @right: The ending index of the [sub]array to search
+ * @low: The starting index of the [sub]array to search
+ * @high: The ending index of the [sub]array to search
  * @value: The value to search for
  *
- Return: first index where value is located or
-* -1 if array is NULL or value not present
+ * Return: first index where value is located or
+ * -1 if array is NULL or value not present
 */
 int bin_search(int *array, size_t low, size_t high, int value)
 {
