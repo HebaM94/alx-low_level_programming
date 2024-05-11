@@ -1,7 +1,7 @@
 #include "search_algos.h"
 #include <stdio.h>
 #include <math.h>
-int advanced_binary_recursive(int *array, size_t low, size_t high, int value);
+int advanced_binary_recursive(int *array, size_t size, int value);
 /**
  * advanced_binary - function that searches for a value in a sorted
  * array of integers
@@ -14,46 +14,42 @@ int advanced_binary_recursive(int *array, size_t low, size_t high, int value);
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-if (array == NULL)
+int i;
+i = rec_search(array, size, value);
+if (i >= 0 && array[i] != value)
 return (-1);
-return (advanced_binary_recursive(array, 0, size - 1, value));
+return (i);
 }
 /**
  * advanced_binary_recursive - Recursive helper function for
  * advanced_binary
  * of integers using binary search
  * @array: A pointer to the first element of the array to search.
- * @low: The starting index of the [sub]array to search
- * @high: The ending index of the [sub]array to search
+ * @size: the number of elements in array
  * @value: The value to search for
  *
  * Return: first index where value is located or
  * -1 if array is NULL or value not present
 */
-int advanced_binary_recursive(int *array, size_t low, size_t high, int value)
+int advanced_binary_recursive(int *array, size_t size, int value)
 {
-size_t mid, i;
-if (low > high)
+size_t i, half = size / 2;
+if (array == NULL || size == 0)
 return (-1);
-printf("Searching in array: ");
-for (i = low; i <= high; i++)
-{
-printf("%d", array[i]);
-if (i < high)
-printf(", ");
-else
+printf("Searching in array");
+for (i = 0; i < size; i++)
+printf("%s %d", (i == 0) ? ":" : ",", array[i]);
 printf("\n");
-}
-mid = low + (high - low) / 2;
-if (array[mid] == value)
+if (half && size % 2 == 0)
+half--;
+if (value == array[half])
 {
-if (mid == low || array[mid - 1] != value)
-return (mid);
-else
-return (advanced_binary_recursive(array, low, mid, value));
+if (half > 0)
+return (rec_search(array, half + 1, value));
+return ((int)half);
 }
-else if (array[mid] < value)
-return (advanced_binary_recursive(array, mid + 1, high, value));
-else
-return (advanced_binary_recursive(array, low, mid - 1, value));
+if (value < array[half])
+return (rec_search(array, half + 1, value));
+half++;
+return (rec_search(array + half, size - half, value) + half);
 }
