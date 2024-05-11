@@ -54,8 +54,9 @@ for (i = low; i <= high; i++)
 printf("%d", array[i]);
 if (i < high)
 printf(", ");
+else
+printf("\n");
 }
-printf("%d\n", array[i]);
 mid = low + (high - low) / 2;
 if (array[mid] == value)
 return (mid);
