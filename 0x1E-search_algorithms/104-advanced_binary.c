@@ -14,12 +14,10 @@ int advanced_binary_recursive(int *array, size_t low, size_t high, int value);
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-if (array == NULL || size == 0)
+if (array == NULL)
 return (-1);
-
 return (advanced_binary_recursive(array, 0, size - 1, value));
 }
-
 /**
  * advanced_binary_recursive - Recursive helper function for
  * advanced_binary
@@ -34,13 +32,11 @@ return (advanced_binary_recursive(array, 0, size - 1, value));
 */
 int advanced_binary_recursive(int *array, size_t low, size_t high, int value)
 {
-size_t mid;
-
+size_t mid, i;
 if (low > high)
 return (-1);
-
 printf("Searching in array: ");
-for (size_t i = low; i <= high; i++)
+for (i = low; i <= high; i++)
 {
 printf("%d", array[i]);
 if (i < high)
@@ -48,9 +44,7 @@ printf(", ");
 else
 printf("\n");
 }
-
 mid = low + (high - low) / 2;
-
 if (array[mid] == value)
 {
 if (mid == low || array[mid - 1] != value)
