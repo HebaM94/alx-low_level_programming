@@ -1,7 +1,7 @@
 #include "search_algos.h"
 #include <stdio.h>
 #include <math.h>
-int bin_search(int *array, int low, int high, int value);
+int bin_search(int *array, size_t low, size_t high, int value)
 /**
  * exponential_search - function that searches for a a value in a sorted
  * array of integers using the Exponential search algorithm
@@ -20,14 +20,14 @@ return (-1);
 if (array[0] == value)
 return (0);
 bound = 0;
-while (bound < size && array[bound] < value)
+while (bound < size && array[bound] <= value)
 {
-printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
+printf("Value checked array[%ld] = [%d]\n", bound, array[bound]);
 bound *= 2;
 }
-printf("Value found between indexes [%lu] and [%ld]\n", bound / 2,
+printf("Value found between indexes [%ld] and [%ld]\n", bound / 2,
 (bound < size ? bound : size - 1));
-return (bin_search(array, bound / 2, (bound < size ? bound : size), value));
+return (bin_search(array, bound / 2, (bound < size ? bound : size - 1), value));
 }
 /**
  * bin_search - Searches for a value in a sorted array
@@ -40,26 +40,26 @@ return (bin_search(array, bound / 2, (bound < size ? bound : size), value));
  Return: first index where value is located or
 * -1 if array is NULL or value not present
 */
-int bin_search(int *array, int low, int high, int value)
+int bin_search(int *array, size_t low, size_t high, int value)
 {
-int mid, i;
+size_t mid, i;
+if (array == NULL)
+return (-1);
 while (low <= high)
 {
-mid = low + (high - low) / 2;
 printf("Searching in array: ");
-for (i = low; i <= high; i++)
+for (i = low; i < high; i++)
 {
 printf("%d", array[i]);
-if (i < high)
-printf(", ");
 }
-printf("\n");
+printf("%d\n", array[i]);
+mid = low + (high - low) / 2;
 if (array[mid] == value)
 return (mid);
-else if (array[mid] < value)
-low = mid + 1;
-else
+if (array[mid] > value)
 high = mid - 1;
+else
+low = mid + 1;
 }
 return (-1);
 }
