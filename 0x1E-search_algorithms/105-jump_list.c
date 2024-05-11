@@ -39,7 +39,7 @@ do {
 	printf("Value found between indexes ");
 	printf("[%d] and [%d]\n", (int)current->index, (int)list->index);
 
-	for (; current && current->index <= list->index; prev = current->next)
+	for (; current && current->index <= list->index; current = current->next)
 	{
 		printf("Value checked at index [%d] = [%d]\n", (int)current->index, current->n);
 		if (current->n == value)
