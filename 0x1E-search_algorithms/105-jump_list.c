@@ -1,7 +1,6 @@
 #include "search_algos.h"
 #include <stdio.h>
 #include <math.h>
-
 /**
  * *jump_list - function that searches for a value in a sorted
  * list of integers using the Jump search algorithm
@@ -22,29 +21,23 @@ jump = (size_t)sqrt((double)size);
 prev = 0;
 n = 0;
 do {
-		current = list;
-		n++;
-		prev = n * jump;
-
-		while (list->next && list->index < prev)
-			list = list->next;
-
-		if (list->next == NULL && prev != list->index)
-			prev = list->index;
-
-		printf("Value checked at index [%d] = [%d]\n", (int)prev, list->n);
-
-	} while (prev < size && list->next && list->n < value);
-
-	printf("Value found between indexes ");
-	printf("[%d] and [%d]\n", (int)current->index, (int)list->index);
-
-	for (; current && current->index <= list->index; current = current->next)
-	{
-		printf("Value checked at index [%d] = [%d]\n", (int)current->index, current->n);
-		if (current->n == value)
-			return (current);
-	}
-
-	return (NULL);
+current = list;
+n++;
+prev = n *jump;
+while (list->next && list->index < prev)
+list = list->next;
+if (list->next == NULL && prev != list->index)
+prev = list->index;
+printf("Value checked at index [%d] = [%d]\n", (int)prev, list->n);
+} while (prev < size && list->next && list->n < value);
+printf("Value found between indexes ");
+printf("[%d] and [%d]\n", (int)current->index, (int)list->index);
+for (; current && current->index <= list->index; current = current->next)
+{
+printf("Value checked at index [%d] = [%d]\n", (int)current->index,
+current->n);
+if (current->n == value)
+return (current);
+}
+return (NULL);
 }
