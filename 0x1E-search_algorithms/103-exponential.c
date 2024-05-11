@@ -14,20 +14,21 @@ int bin_search(int *array, size_t low, size_t high, int value);
  */
 int exponential_search(int *array, size_t size, int value)
 {
-size_t bound;
+size_t i, j;
 if (array == NULL)
 return (-1);
-if (array[0] == value)
-return (0);
-bound = 0;
-while (bound < size && array[bound] <= value)
+if (array[0] != value)
 {
-printf("Value checked array[%ld] = [%d]\n", bound, array[bound]);
-bound *= 2;
+i = 0;
+while (i < size && array[i] <= value)
+{
+printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+i *= 2;
 }
-printf("Value found between indexes [%ld] and [%ld]\n", bound / 2,
-(bound < size ? bound : size - 1));
-return (bin_search(array, bound / 2, (bound < size ? bound : size - 1), value));
+}
+printf("Value found between indexes [%ld] and [%ld]\n", j / 2,
+(j < size ? j : size - 1));
+return (bin_search(array, j  / 2, (j < size ? j : size - 1), value));
 }
 /**
  * bin_search - Searches for a value in a sorted array
