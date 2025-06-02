@@ -29,7 +29,7 @@ for (i = 0; i < len; i++)
 {
 dest[i] = src[i];
 }
-dest[i] = '\0';
+dest[i] = '\0';     //'\0' means null terminator
 return (dest);
 }
 /**
@@ -48,7 +48,7 @@ len2 = _strlen(owner);
 dog = malloc(sizeof(dog_t));
 if (dog == NULL)
 return (NULL);
-dog->name = malloc(sizeof(char) * (len1 + 1));
+dog->name = malloc(sizeof(char) * (len1 + 1));      //Makes full copies of strings
 if (dog->name == NULL)
 {
 free(dog);
